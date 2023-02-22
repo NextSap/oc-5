@@ -153,11 +153,9 @@
             $(imagesCollection).each(function (i) {
                 if ($(activeImage).attr("src") === $(this).attr("src")) {
                     index = i;
-                    console.log("prev", index)
                 }
             });
-            next =
-                imagesCollection[imagesCollection.length - 1]; // TODO
+            next = index === 0 ? imagesCollection[imagesCollection.length - 1] : imagesCollection[index - 1]
             $(".lightboxImage").attr("src", $(next).attr("src"));
         },
         nextImage() {
